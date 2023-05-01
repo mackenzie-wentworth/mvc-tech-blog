@@ -1,4 +1,4 @@
-// reference to DASHBOARD (user is able to create/update/delete personal blogposts IF/ONCE the user is logged-in)
+// Reference to DASHBOARD (user is able to create/update/delete personal blogposts IF/ONCE the user is logged-in)
 
 // TODO: Import dependencies, including express 'router' and withAuth
 const router = require("express").Router();
