@@ -1,4 +1,4 @@
-// HOMEPAGE (displays existing blogposts from all users IF/ONCE the user is logged-in)
+// DASHBOARD (displays user's personal existing blogposts IF/ONCE the user is logged-in)
 
 // TODO: Import dependencies, including express 'router' and withAuth
 
