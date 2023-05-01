@@ -17,20 +17,19 @@ Comment.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        profile_username: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: 'user',
-              key: 'username',
-            },
-        },
         date_created: {
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
           },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'user',
+              key: 'id',
+            },
+        },
     },
-
     {
         sequelize,
         freezeTableName: true,
