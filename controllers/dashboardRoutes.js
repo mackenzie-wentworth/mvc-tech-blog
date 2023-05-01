@@ -37,3 +37,4 @@ router.get("/", withAuth, (req, res) => {
 
 
 // TODO: Export 'router'
+module.exports = router;
