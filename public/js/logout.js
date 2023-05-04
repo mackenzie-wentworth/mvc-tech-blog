@@ -1,0 +1,1 @@
+// TODO: Create "document" querySelector and addEventListener for when user clicks "logout" option
