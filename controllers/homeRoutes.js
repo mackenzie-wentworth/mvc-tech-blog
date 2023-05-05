@@ -1,91 +1,97 @@
-// HOMEPAGE (displays existing blogposts from all users IF/ONCE the user is logged-in)
+// HOMEPAGE (displays existing blogposts, does NOT require user to be logged)
 
-// TODO: Import dependencies, including express 'router' and withAuth
-const router = require("express").Router();
-const { User, BlogPost, Comment } = require("../models/");
+const router = require('express').Router();
+// const { User, BlogPost, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
-// TODO: Use express-session to store session data in a cookie
+router.get('/', async (req, res) => {
+    try {
+      res.render('homepage');
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
-// TODO: If the user is logged in, allow them to view all existing blog posts from all users
-router.get('/', (req, res) => {
-    BlogPost.findAll({
-        attributes: [
-            'id',
-            'title',
-            'contents',
-            'date_created',
-        ],
-        include: [{
-            model: Comment,
-            attributes: ['comment_body', 'date_created', 'user_id'],
-            include: {
-                model: User,
-                attributes: ['username']
-            }
-        },
-        {
-            model: User,
-            attributes: ['username']
-        }
-        ]
-    })
-        .then(blogPostData => {
-            const blogposts = blogPostData.map(post => post.get({ plain: true }));
-            console.log(blogposts);
+// router.get('/', async (req, res) => {
+//   try {
+//     // Get all blogposts and JOIN with user data
+//     const blogPostData = await BlogPost.findAll({
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['username'],
+//         },
+//       ],
+//     });
 
-            res.render('homepage', { blogposts, logged_in: req.session.logged_in });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+//     // Serialize data so the homepage template can read it
+//     const blogPosts = blogPostData.map((blogPost) => blogPost.get({ plain: true }));
 
-// TODO: Option for user to click on a specific existing blog post (so the user can add a comment)
-router.get('/post/:id', (req, res) => {
-    BlogPost.findOne({
-        where: {
-            id: req.params.id
-        },
-        attributes: [
-            'id',
-            'title',
-            'contents',
-            'date_created'
-        ],
-        include: [{
-            model: Comment,
-            attributes: ['comment_body', 'date_created', 'user_id'],
-            include: {
-                model: User,
-                attributes: ['username']
-            }
-        },
-        {
-            model: User,
-            attributes: ['username']
-        }
-        ]
-    })
-        .then(blogPostData => {
-            if (!blogPostData) {
-                res.status(404).json({ message: 'Sorry, no post found with this id!' });
-                return;
-            }
-            const singlePost = blogPostData.get({ plain: true });
-            console.log(singlePost);
-            res.render('single-post', { singlePost, logged_in: req.session.logged_in });
+//     // Pass serialized data and session flag into template
+//     // Renders the 'homepage' handlebars page under 'VIEWS' folder
+//     res.render('homepage', { 
+//       blogPosts, 
+//       logged_in: req.session.logged_in 
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
+// // Get one blog post, be sure to include it's associated User and Comments
+// router.get('/blogPost/:id', async (req, res) => {
+//   try {
+//     const blogPostData = await BlogPost.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['username'],
+//         },
+//         { model: Comment, 
+//             include: [{ model: User, attributes: ['username']}]
+//         }
+//       ],
+//     });
 
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+//     const blogPost = blogPostData.get({ plain: true });
 
+//     res.render('blogPost', {
+//       ...blogPost,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
-// TODO: If the user is NOT logged in, redirect the user to the login page --> redirect to "sign-in/sign-up"
+// Use withAuth middleware to prevent access to route (direct user to Dashboard page once they are logged in)
+// router.get('/dashboard', withAuth, async (req, res) => {
+//   try {
+//     // Find the logged in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ['password'] },
+//       include: [{ model: BlogPost }],
+//     });
 
-// TODO: Export 'router'
+//     const user = userData.get({ plain: true });
+
+//     res.render('dashboard', {
+//       ...user,
+//       logged_in: true
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+// router.get('/login', (req, res) => {
+//   // If the user is already logged in, redirect the request to another route
+//   if (req.session.logged_in) {
+//     res.redirect('/dashboard');
+//     return;
+//   }
+
+//   res.render('login');
+// });
+
 module.exports = router;
