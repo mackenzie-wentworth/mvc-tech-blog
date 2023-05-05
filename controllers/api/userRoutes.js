@@ -7,29 +7,29 @@ const router = require("express").Router();
 // // TODO: Use express-session to store session data in a cookie
 
 // // TODO: Create new user (POST method with 'create') --> "sign-up"
-// router.post("/", (req, res) => {
-//     User.create({
-//         username: req.body.username,
-//         password: req.body.password
-//     })
-//         .then(userData => {
-//             req.session.save(() => {
-//                 req.session.user_id = userData.id;
-//                 req.session.username = userData.username;
-//                 req.session.logged_in = true;
+router.post("/", (req, res) => {
+    User.create({
+        username: req.body.username,
+        password: req.body.password
+    })
+        .then(userData => {
+            req.session.save(() => {
+                req.session.user_id = userData.id;
+                req.session.username = userData.username;
+                req.session.logged_in = true;
 
-//                 res.json(userData);
-//             });
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
+                res.json(userData);
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 
 // // TODO: User /login route (POST method with 'findOne') --> "sign-in"
-// // checkPassword
+// checkPassword
 // router.post("/login", (req, res) => {
 //     User.findOne({
 //         where: {
