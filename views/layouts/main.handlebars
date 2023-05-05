@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fund My Project!</title>
+    <title>Kenzie's Tech Blog</title>
     <link rel="stylesheet" href="/css/jass.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -13,10 +13,32 @@
 <body>
     <div class="flex-column justify-space-around">
         <header class="display-flex justify-space-between align-center p-2">
-            <h1>
-                <span role="img" aria-label="money">💸</span>
-                <a href="/">Fund My Project!</a>
-            </h1>
+            <h1>Kenzie's Tech Blog</h1>
+            <nav class="navbar">
+                <ul>
+                    {{!-- TODO: Use helper functions --}}
+                    {{#if logged_in}}
+                    <li><a href="/homepage">Home</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/login">Login</a></li>
+                    {{else}}
+                    <li><a href="/homepage">Home</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    {{/if}}
+                </ul>
+            </nav>
         </header>
+        <main class="container container-fluid mt-5">
+            <!-- TODO: Render the sub layout using {{{body}}} in 'main' section (where 'body' acts as a placeholder for where the main content will be rendered)-->
+            {{{ body }}}
+        </main>
+        <footer>
+
+        </footer>
     </div>
+
+
+    <!-- Render script for logged in users only -->
 </body>
