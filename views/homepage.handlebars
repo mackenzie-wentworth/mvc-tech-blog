@@ -1,4 +1,21 @@
 {{!-- User's view once the user clicks on the homepage. Displays all existing blog posts from all users --}}
 
+<h1>Kenzie's Tech Blog</h1>
 {{!-- TODO: Use helper functions --}}
-
+<div>
+    {{#each blogPosts}}
+    <article class="card">
+        <div>
+            <h2>
+                <a href="/blogPost/{{id}}">{{title}}</a>
+            </h2>
+            <div>
+                Posted by {{User.username}} on {{format_date date_created}}
+            </div>
+        </div>
+        <div class="card-body">
+            {{body}}
+        </div>
+    </article>
+    {{/each}}
+</div>
