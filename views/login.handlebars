@@ -1,25 +1,25 @@
-{{!-- User's view once the user clicks option from navigation to "login." Displays login form with 'login' button. Also has alternative 'sign up' button option to "sign up instead" --}}
+{{!-- User's view once the user clicks option from navigation to "login." Displays login form with 'login' button. Also
+has alternative 'sign up' button option to "sign up instead" --}}
 
 {{!-- TODO: Use helper functions --}}
 
-<div class="row">
-  <div class="col-md-6">
+<div class="card">
+  <div class="card-header">
     <h2>Login</h2>
-
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="username-login">Username:</label>
-        <input class="form-input" type="text" id="username-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-    <p>Sign Up Instead</p><a href="/signup">SIGN UP!</a>
   </div>
-{{!-- The login.js file handles the form handlers that are pertinent to the login page.  --}}
+  <form id="login-form" class="card-body">
+    <div>
+      <label for="username-login">Username:</label>
+      <input type="text" id="username-login" />
+    </div>
+    <div>
+      <label for="password-login">Password</label>
+      <input type="password" id="password-login" />
+    </div>
+    <button type="submit" id="login-btn" class="btn">Login</button>
+  </form>
+
+  <a type="button" href="/signup">Sign Up Instead</a>
+</div>
+
 <script src="./js/login.js"></script>

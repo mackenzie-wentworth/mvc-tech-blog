@@ -3,18 +3,15 @@
 <h1>Kenzie's Tech Blog</h1>
 {{!-- TODO: Use helper functions --}}
 <div>
-    {{#each blogPosts}}
+    {{#each blogPosts as |blogPost| }}
     <article class="card">
-        <div>
+        <div class="card-header">
             <h2>
-                <a href="/blogPost/{{id}}">{{title}}</a>
+                <a href="/blogPost/{{blogPost.id}}">{{blogPost.title}}</a>
             </h2>
             <div>
-                Posted by {{User.username}} 
+                <p>Posted by {{blogPost.user.username}} on {{format_date blogPost.date_created}}</p>
             </div>
-        </div>
-        <div class="card-body">
-            {{body}}
         </div>
     </article>
     {{/each}}

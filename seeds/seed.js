@@ -23,12 +23,14 @@ const seedDatabase = async () => {
       individualHooks: true,
       returning: true,
     });
+    console.log('\n---------- USERS SEEDED ----------\n');
   
     for (const blogPost of blogPostData) {
       await BlogPost.create({
         ...blogPost,
         user_id: users[Math.floor(Math.random() * users.length)].id,
       });
+      console.log('\n---------- BLOGPOSTS SEEDED ----------\n');
     }
   
     process.exit(0);
