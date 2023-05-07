@@ -72,4 +72,13 @@ router.get('/blogPost/:id', async (req, res) => {
   }
 });
 
+// TODO: From homepage, user can click on "login" option from the navigation links to login. Once the user fills out all "Login" fields, they are redirected to the "dashboard" page
+router.get('/login', (req, res) => {
+	if (req.session.logged_in) {
+		res.redirect('/dashboard');
+		return;
+	}
+	res.render('login');
+});
+
 module.exports = router;
