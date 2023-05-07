@@ -72,6 +72,31 @@ router.get('/blogPost/:id', async (req, res) => {
   }
 });
 
+// TODO: From homepage, user can click on "dashboard" option from the navigation links, which takes them to the page "My Dashboard" (requires withAuth, user must be logged in to access Dashboard link)
+router.get('/dashboard', withAuth, async (req, res) => {
+	try {
+		const userData = await User.findByPk(req.session.user_id, {
+			attributes: {
+				exclude: ['password']
+			},
+			include: [{
+				model: BlogPost
+			}],
+		});
+
+		const user = userData.get({
+			plain: true
+		});
+
+		res.render('dashboard', {
+			...user,
+			logged_in: true
+		});
+	} catch (err) {
+		res.status(500).json(err);
+	}
+});
+
 // TODO: From homepage, user can click on "login" option from the navigation links to login. Once the user fills out all "Login" fields, they are redirected to the "dashboard" page
 router.get('/login', (req, res) => {
 	if (req.session.logged_in) {
