@@ -13,29 +13,7 @@ const withAuth = require('../utils/auth');
 //     }
 //   });
 
-// When user clicks on "Home" from navigation link, it takes them to the homepage
-// router.get('/homepage', async (req, res) => {
-//   try {
-//     // Get all blogposts and JOIN with user data
-//     const blogPostData = await BlogPost.findAll({
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['username'],
-//         },
-//       ],
-//     });
 
-//     const blogPosts = blogPostData.map((blogPost) => blogPost.get({ plain: true }));
-
-//     res.render('homepage', {
-//       blogPosts,
-//       logged_in: req.session.logged_in
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 // TODO: If the user is logged in, allow them to view all existing blog posts from all users
 // GET all BlogPosts to view on homepage (does NOT require withAuth)
 router.get('/', async (req, res) => {
@@ -129,8 +107,16 @@ router.get('/login', (req, res) => {
 	res.render('login');
 });
 
-router.get("/signup",(req,res)=>{
-  res.render("signup")
-})
+router.get('/signup', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/dashboard");
+    return;
+  }
+  res.render("signup");
+});
+
+// router.get("/signup",(req,res)=>{
+//   res.render("signup")
+// })
 
 module.exports = router;

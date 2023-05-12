@@ -29,28 +29,49 @@ const loginFormHandler = async (event) => {
 // TODO: Set up async event for 'signupFormHandler'
 const signupFormHandler = async (event) => {
     event.preventDefault();
-
-    // TODO: Set up querySelectors for signup form
-    const username = document.querySelector('#username-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-
-    // TODO: Send POST request to API endpoint
-    if (username && email && password) {
-        const response = await fetch('/api/users', {
-            method: 'POST',
-            body: JSON.stringify({ username, email, password }),
-            headers: { 'Content-Type': 'application/json' },
-        });
-
-        if (response.ok) {
-            // TODO: Redirect the browser to the user's view of user's dashboard page (if user signup is successful)
-            document.location.replace('/dashboard');
-        } else {
-            alert(response.statusText);
-        }
+    const newUser = {
+        username:document.querySelector("#username-signup").value,
+        email:document.querySelector("#email-signup").value,
+        password:document.querySelector("#password-signup").value,
     }
-};
+    console.log(newUser)
+    fetch("/api/users/",{
+        method:"POST",
+        body:JSON.stringify(newUser),
+        headers:{
+            "Content-Type":"application/json"
+        }
+    }).then(res=>{
+        if(res.ok){
+            console.log("user is signed up")
+            location.href="/dashboard"
+        } else {
+            alert("please try again")
+        }
+    })
+}
+//     // TODO: Set up querySelectors for signup form
+//     const username = document.querySelector('#username-signup').value.trim();
+//     const email = document.querySelector('#email-signup').value.trim();
+//     const password = document.querySelector('#password-signup').value.trim();
+
+//     // TODO: Send POST request to API endpoint
+//     if (username && email && password) {
+//         const response = await fetch('/api/users/signup', {
+//             method: 'POST',
+//             body: JSON.stringify({ username, email, password }),
+//             headers: { 'Content-Type': 'application/json' },
+//         });
+
+//         if (response.ok) {
+//             // TODO: Redirect the browser to the user's view of user's dashboard page (if user signup is successful)
+//             document.location.replace('/dashboard');
+//         } else {
+//             alert(response.statusText);
+//         }
+//     }
+// };
+
 
 
 
