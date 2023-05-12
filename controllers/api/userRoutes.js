@@ -28,6 +28,29 @@ router.post('/', async (req, res) => {
   }
 });
 // TODO: Create new user (POST method with 'create') --> "sign-up"
+// Create a new user based on the data we receive from the signup form on the login page. 
+router.post('/signup', async (req, res) => {
+  try {
+    const addUser = new User();
+    addUser.username = req.body.username;
+    addUser.email = req.body.email;
+    addUser.password = req.body.password;
+
+    const userData = await addUser.save();
+
+    console.log(userData)
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+    console.log(err);
+  }
+});
 
 // TODO: User /login route (POST method with 'findOne') --> "sign-in"
 router.post('/login', async (req, res) => {

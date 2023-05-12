@@ -97,7 +97,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 	}
 });
 
-// TODO: From homepage, user can click on "login" option from the navigation links to login. Once the user fills out all "Login" fields, they are redirected to the "dashboard" page
+// TODO: From homepage, user can click on "login" option from the navigation links to login. Once the user fills out all "Login" fields, they are redirected to the "dashboard" page.
 router.get('/login', (req, res) => {
 	if (req.session.logged_in) {
 		res.redirect('/dashboard');
@@ -105,5 +105,9 @@ router.get('/login', (req, res) => {
 	}
 	res.render('login');
 });
+
+router.get("/signup",(req,res)=>{
+  res.render("signup")
+})
 
 module.exports = router;
