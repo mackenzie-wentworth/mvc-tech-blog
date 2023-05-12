@@ -35,7 +35,7 @@ const sess = {
   };
   
   app.use(session(sess));
-  app.use(routes);
+ 
 
 // TODO: Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
@@ -46,6 +46,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(routes);
 
 // TODO: Sync sequelize models to the database, then turn on the server
 sequelize.sync({ force: false }).then(() => {
