@@ -1,6 +1,23 @@
 // WHEN I click on the button to add a new blog post
 // THEN I am prompted to enter both a title and contents for my blog post
 
+// TODO: Create function to handle the "+ New Post" button by routing the button to '/new' page for user to fill out new blog post in newFormHandler
+const newPostButton = async () => {
+    const response = await fetch('/new', {
+      method: 'GET',
+    });
+  
+    if (response.ok) {
+      document.location.replace('/new');
+    } else {
+      alert(response.statusText);
+    }
+  };
+  
+  document.querySelector('#select-create-post').addEventListener('click', newPostButton);
+
+
+
 // TODO: Set up async event for 'newFormHandler'
 const newFormHandler = async (event) => {
     event.preventDefault();

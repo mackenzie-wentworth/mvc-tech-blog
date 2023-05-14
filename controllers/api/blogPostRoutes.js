@@ -6,11 +6,10 @@ const { User, BlogPost, Comment} = require("../../models/");
 const withAuth = require('../../utils/auth');
 
 // TODO: GET method for "+New Post" button that allows user to create/add a new blog post from the main page of the dashboard
-router.get('/new', withAuth, (req, res) => {
-    res.render('newPost', {
-        layout: 'dashboard'
-    });
-});
+router.get('/new', withAuth, (req, res) => 
+    res.render('newPost')
+    );
+
 
 router.post('/', withAuth, async (req, res) => {
     try {
@@ -26,3 +25,5 @@ router.post('/', withAuth, async (req, res) => {
   });
 
 // TODO: GET method for option to click on a personal existing blog post to "EDIT" their post (the "EDIT" option will take them to a new page where the user can either UPDATE or DELETE the selected post by id)
+
+module.exports = router;
