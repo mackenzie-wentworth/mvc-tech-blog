@@ -1,6 +1,6 @@
 // Prompt user to SIGN IN, SIGN UP, LOGOUT
 
-// // TODO: Import dependencies, including express 'router' 
+// TODO: Import dependencies, including express 'router' 
 const router = require("express").Router();
 const { User, BlogPost, Comment} = require("../../models/");
 

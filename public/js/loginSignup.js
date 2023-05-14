@@ -24,12 +24,11 @@ const loginFormHandler = async (event) => {
 };
 
 
-
-
 // TODO: Set up async event for 'signupFormHandler'
 const signupFormHandler = async (event) => {
     event.preventDefault();
 
+    // TODO: Set up querySelectors for signup form
     const selectedUsername = document.querySelector('#username-signup').value.trim();
     const selectedEmail = document.querySelector('#email-signup').value.trim();
     const selectedPassword = document.querySelector('#password-signup').value.trim();
@@ -39,22 +38,25 @@ const signupFormHandler = async (event) => {
         password: selectedPassword
     }
     console.log(newUser)
+    // TODO: Send POST request to API endpoint
     fetch("/api/users/",{
         method:"POST",
         body:JSON.stringify(newUser),
         headers:{
             "Content-Type":"application/json"
         }
+    
     }).then(res=>{
         if(res.ok){
             console.log("user is signed up")
+             // TODO: Redirect the browser to the user's view of user's dashboard page (if user signup is successful)
             document.location.replace('/dashboard')
         } else {
             alert("please try again")
         }
     })
 }
-//     // TODO: Set up querySelectors for signup form
+
 // const signupFormHandler = async (event) => {
 //     event.preventDefault();
 
