@@ -64,7 +64,7 @@ router.get('/blogPost/:id', async (req, res) => {
 
     const blogPost = blogPostData.get({ plain: true });
 
-    res.render('blogPost', {
+    res.render('comment', {
       ...blogPost,
       logged_in: req.session.logged_in
     });
@@ -104,23 +104,24 @@ router.get('/new', withAuth, (req, res) =>
 );
 
 // // TODO: From Dashboard --> GET method for user to click on existing blog post from dashboard page that takes them to an 'Edit Blog Post' page
-// router.get("/edit/:id", withAuth, (req, res) => {
-//     Post.findByPk(req.params.id)
-//         .then(dbPostData => {
-//             if (dbPostData) {
-//                 const post = dbPostData.get({ plain: true });
+router.get("/edit/:id", withAuth, (req, res) => {
+    BlogPost.findByPk(req.params.id)
+        .then(editPostData => {
+            if (editPostData) {
+                const blogPost = editPostData.get({ plain: true });
 
-//                 res.render("edit-post", {
-//                     post
-//                 });
-//             } else {
-//                 res.status(404).end();
-//             }
-//         })
-//         .catch(err => {
-//             res.status(500).json(err);
-//         });
-// });
+                res.render("editPost", {
+                    blogPost
+                });
+            } else {
+                res.status(404).end();
+            }
+        })
+        .catch(err => {
+            res.status(500).json(err);
+        });
+});
+
 
 
 // TODO: From homepage, user can click on "login" option from the navigation links to login. Once the user fills out all "Login" fields, they are redirected to the "dashboard" page.
