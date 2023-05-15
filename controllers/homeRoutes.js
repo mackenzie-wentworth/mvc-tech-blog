@@ -98,6 +98,12 @@ router.get('/dashboard', withAuth, async (req, res) => {
 	}
 });
 
+// TODO: GET method for "+New Post" button that allows user to create/add a new blog post from the main page of the dashboard
+router.get('/new', withAuth, (req, res) => 
+    res.render('newPost')
+    );
+
+    
 // TODO: From homepage, user can click on "login" option from the navigation links to login. Once the user fills out all "Login" fields, they are redirected to the "dashboard" page.
 router.get('/login', (req, res) => {
 	if (req.session.logged_in) {
