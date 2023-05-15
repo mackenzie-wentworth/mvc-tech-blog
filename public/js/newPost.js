@@ -17,7 +17,7 @@ const newPostButton = async () => {
   document.querySelector('#select-create-post').addEventListener('click', newPostButton);
 
 
-
+// newFormHandler takes in user data to create new blog post and populates the new blog post to the main dashboard page
 // TODO: Set up async event for 'newFormHandler'
 const newFormHandler = async (event) => {
     event.preventDefault();
@@ -30,10 +30,11 @@ const contents = document.querySelector('#create-contents').value.trim();
 if (title && contents) {
     const response = await fetch(`/api/blogPosts`, {
       method: 'POST',
-      body: JSON.stringify({ title, contents}),
       headers: {
         'Content-Type': 'application/json',
       },
+      body: JSON.stringify({ title, contents}),
+
     });
 
     if (response.ok) {
@@ -45,7 +46,6 @@ if (title && contents) {
   }
 };
 
-
 // TODO: Create "document" querySelector and addEventListener for when user clicks "create" option (through submit button)
 document
-  .querySelector('#create-post')?.addEventListener('submit', newFormHandler);
+  .querySelector('#create-post-form')?.addEventListener('submit', newFormHandler);

@@ -1,7 +1,24 @@
-{{!-- User's view once they click on the dashboard from navigation link. Displays "Your Dashboard" with  "New Post" button option and the all the user's personal existing blog posts with the option to click the blog post and edit --}}
+{{!-- User's view once they click on the dashboard from navigation link. Displays "Your Dashboard" with  "New Post" button option and the all the user's personal existing blog posts. Includes option for user to click on existing blogpost to EDIT. --}}
+
+{{!-- Dashboard populates all newly created blogposts once user clicks the "Create" button from the 'Create New Post' page --}}
 
 {{!-- TODO: Use helper functions --}}
 <h1>Your Dashboard</h1>
+
+<div>
+    {{#each blogPosts as |blogPost| }}
+    <article class="card">
+        <div class="card-header">
+            <h2>
+                <a href="/blogPost/{{blogPost.id}}">{{blogPost.title}}</a>
+            </h2>
+            <div>
+                <p>Posted by {{blogPost.user.username}} on {{format_date blogPost.date_created}}</p>
+            </div>
+        </div>
+    </article>
+    {{/each}}
+</div>
 
 <form id="select-create-post">
     <button href="/api/blogPosts/new" class="btn" type="submit">+ New Post</button>
