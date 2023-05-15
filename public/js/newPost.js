@@ -3,12 +3,12 @@
 
 // TODO: Create function to handle the "+ New Post" button by routing the button to '/new' page for user to fill out new blog post in newFormHandler
 const newPostButton = async () => {
-    const response = await fetch('/new', {
+    const response = await fetch('/api/blogPosts/new', {
       method: 'GET',
     });
   
     if (response.ok) {
-      document.location.replace('/new');
+      document.location.replace('/api/blogPosts/new');
     } else {
       alert(response.statusText);
     }
