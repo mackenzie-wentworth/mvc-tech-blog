@@ -28,8 +28,6 @@ router.get('/', withAuth, (req, res) => {
 
 
 
-
-
 // POST method to create a NEW blog post (from clicking "+New Post" button first, then user fills out user data for newFormHandler, followed by clicking the "Create" button to populate the NEW created blogpost)
 router.post('/', withAuth, async (req, res) => {
     try {
