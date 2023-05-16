@@ -44,15 +44,15 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // TODO: GET method for the "Edit Blog Post" page once a user clicks on an existing blogpost (the "EDIT" option will take them to a new page where the user can either UPDATE or DELETE the selected post by id)
-router.put("/:id", withAuth, async (req, res) => {
+router.put('/blogPost/:id', withAuth, async (req, res) => {
   try {
-    const updatePost = await BlogPost.update(req.body, {
+    const updateBlogPost = await BlogPost.update(req.body, {
       where: {
         id: req.params.id
       },
     });
 
-    if (!updatePost) {
+    if (!updateBlogPost) {
       res.status(404).json({
         message: `Sorry, no record exists of a blog post with the id: ${req.params.id}`
       });
@@ -68,24 +68,5 @@ router.put("/:id", withAuth, async (req, res) => {
   }
 });
 
-// router.delete('/:id', withAuth, async (req, res) => {
-//   try {
-//     const deletePost = await BlogPost.destroy({
-//       where: {
-//         id: req.params.id,
-//         user_id: req.session.user_id,
-//       },
-//     });
-
-//     if (!deletePost) {
-//       res.status(404).json({ message: `Sorry, no record exists of a blog post with the id: ${req.params.id}` });
-//       return;
-//     }
-
-//     res.status(200).json(deletePost);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 module.exports = router;

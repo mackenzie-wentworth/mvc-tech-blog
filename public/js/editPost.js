@@ -11,7 +11,7 @@ const contents = document.querySelector('#edit-contents').value.trim();
 
 // // TODO: Send POST request to API endpoint
 if (title && contents) {
-    const updatePost = await fetch(`/edit/${blogPost_id}`, {
+    const updateBlogPost = await fetch(`/edit/${blogPost_id}`, {
         method: "PUT",
         headers: { 
             'Content-Type': 'application/json'
@@ -19,7 +19,7 @@ if (title && contents) {
         body: JSON.stringify({ title, contents}),
      
     })
-    if (updatePost.ok) {
+    if (updateBlogPost.ok) {
         // TODO: Redirect the browser to the user's view of user's dashboard page (if user 'update post' is successful)
         document.location.replace('/dashboard')
     } else {

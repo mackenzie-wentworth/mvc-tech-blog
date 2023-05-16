@@ -7,6 +7,7 @@ for title and content with 'Update Post' button option. Also shows 'Delete' butt
 
 <div class="card">
     <div class="card-header">
+        <a href="/dashboard"> &larr; Back to Dashboard</a>
         <h2>Edit Blog Post</h2>
     </div>
     <form id="edit-post-form" class="card-body">
@@ -19,10 +20,10 @@ for title and content with 'Update Post' button option. Also shows 'Delete' butt
             <label for="contents">Content:</label>
             <input type="text" id="edit-contents" value="{{blogPost.contents}}" />
         </div>
-        <button href="/api/blogPosts" class="btn" type="submit">Update</button>
+        <button class="btn" type="submit">Update</button>
 
         <button id="delete-btn" class="btn" type="button">Delete</button>
     </form>
 </div>
 
-<script src="./js/editPost.js"></script> 
+<script src="/js/editPost.js"></script> 
