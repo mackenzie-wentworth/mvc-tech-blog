@@ -44,7 +44,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // TODO: GET method for the "Edit Blog Post" page once a user clicks on an existing blogpost (the "EDIT" option will take them to a new page where the user can either UPDATE or DELETE the selected post by id)
-router.put('/blogPost/:id', withAuth, async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
   try {
     const updateBlogPost = await BlogPost.update(req.body, {
       where: {
