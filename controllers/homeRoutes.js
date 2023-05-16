@@ -39,8 +39,8 @@ router.get('/', async (req, res) => {
   }
 });
 
-// TODO: Option for user to click on a specific existing blog post (so the user can add a comment)
-// Get one BlogPost, be sure to include it's associated User and Comments
+// TODO: GET method to get a one blogpost by id --> Option for user to click on a specific existing blog post (so the user can add a comment)
+// Be sure to include it's associated User and Comments
 router.get('/blogPost/:id', async (req, res) => {
   try {
     const blogPostData = await BlogPost.findByPk(req.params.id, {

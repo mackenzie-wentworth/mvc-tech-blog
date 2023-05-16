@@ -1,7 +1,12 @@
 [
     {
-      "title": "My first Blog Post",
+      "title": "Testing user 1 first blog post",
       "contents": "This is the body of my first blog post! Whoohoo!",
       "user_id": 1
+    },
+    {
+      "title": "Testing user 2 first blog post!!",
+      "contents": "This is the body of my first blog post!",
+      "user_id": 2
     }
   ]
