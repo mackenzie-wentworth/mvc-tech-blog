@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 
 // TODO: POST method to allow user to CREATE a COMMENT (comment added to a single blog post)
 router.post("/", withAuth, (req, res) => {
-    Comment.create({ ...req.body, userId: req.session.user_id })
+    Comment.create({ ...req.body, user_id: req.session.user_id })
         .then(addComment => {
             res.json(addComment);
         })
