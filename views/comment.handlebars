@@ -31,12 +31,12 @@
 
 {{#if logged_in}}
 <form id="add-comment-form" class="card-body">
-  <input type="hidden" name="blogPost-id" value="{{blogPost.id}}" />
-  <div class="mb-3">
-    <label class="form-label" for="comment-body">Comment</label>
+  <div>
+    <input type="hidden" name="blogPost-id" value="{{blogPost.id}}" />
+    <label class="form-label" for="comment">Comment</label>
   </div>
   <div>
-    <textarea name="comment-body" class="form-input" placeholder="Add your comment here..."></textarea>
+    <textarea name="comment-text-body" class="form-input" id="add-comment" placeholder="Add your comment here..."></textarea>
 
     <button type="submit" class="btn">Submit</button>
   </div>
