@@ -13,11 +13,12 @@ const withAuth = require('../utils/auth');
 //     }
 //   });
 
+
 // TODO: If the user is logged in, allow them to view all existing blog posts from all users
 // GET all BlogPosts to view on homepage (does NOT require withAuth)
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all blog posts and JOIN with user data
     const blogPostData = await BlogPost.findAll({
       include: [
         {
@@ -38,9 +39,10 @@ router.get('/', async (req, res) => {
   }
 });
 
-// TODO: Option for user to click on a specific existing blog post (so the user can add a comment)
-// Get one BlogPost, be sure to include it's associated User and Comments
+// TODO: GET method to get a one blogpost by id --> Option for user to click on a specific existing blog post (so the user can add a comment)
+// Be sure to include it's associated User and Comments
 router.get('/blogPost/:id', async (req, res) => {
+
   try {
     const blogPostData = await BlogPost.findByPk(req.params.id, {
       include: [
@@ -63,7 +65,7 @@ router.get('/blogPost/:id', async (req, res) => {
 
     const blogPost = blogPostData.get({ plain: true });
 
-    res.render('blogPost', {
+    res.render('comment', {
       ...blogPost,
       logged_in: req.session.logged_in
     });
@@ -97,7 +99,36 @@ router.get('/dashboard', withAuth, async (req, res) => {
 	}
 });
 
-// TODO: From homepage, user can click on "login" option from the navigation links to login. Once the user fills out all "Login" fields, they are redirected to the "dashboard" page
+// // TODO: From Dashboard --> GET method for "+New Post" button that allows user to create/add a new blog post from the main page of the dashboard. Clicking the "+New Post" button will take the user to the "Create New Post" page
+router.get('/new', withAuth, (req, res) => {
+  console.log(req.session);
+  res.render('createPost', {
+    logged_in: req.session.logged_in,
+  });
+});
+
+// // TODO: From Dashboard --> GET method for user to click on existing blog post from dashboard page that takes them to an 'Edit Blog Post' page
+router.get("/edit/:id", withAuth, (req, res) => {
+    BlogPost.findByPk(req.params.id)
+        .then(editPostData => {
+            if (editPostData) {
+                const blogPost = editPostData.get({ plain: true });
+
+                res.render("editPost", {
+                    blogPost
+                });
+            } else {
+                res.status(404).end();
+            }
+        })
+        .catch(err => {
+            res.status(500).json(err);
+        });
+});
+
+
+
+// TODO: From homepage, user can click on "login" option from the navigation links to login. Once the user fills out all "Login" fields, they are redirected to the "dashboard" page.
 router.get('/login', (req, res) => {
 	if (req.session.logged_in) {
 		res.redirect('/dashboard');
@@ -105,5 +136,17 @@ router.get('/login', (req, res) => {
 	}
 	res.render('login');
 });
+
+router.get('/signup', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/dashboard");
+    return;
+  }
+  res.render("signup");
+});
+
+// router.get("/signup",(req,res)=>{
+//   res.render("signup")
+// })
 
 module.exports = router;

@@ -1,6 +1,6 @@
 // Prompt user to SIGN IN, SIGN UP, LOGOUT
 
-// // TODO: Import dependencies, including express 'router' 
+// TODO: Import dependencies, including express 'router' 
 const router = require("express").Router();
 const { User, BlogPost, Comment} = require("../../models/");
 
@@ -28,6 +28,29 @@ router.post('/', async (req, res) => {
   }
 });
 // TODO: Create new user (POST method with 'create') --> "sign-up"
+// Create a new user based on the data we receive from the signup form on the login page. 
+router.post('/signup', async (req, res) => {
+  try {
+    const addUser = new User();
+    addUser.username = req.body.username;
+    addUser.email = req.body.email;
+    addUser.password = req.body.password;
+
+    const userData = await addUser.save();
+
+    console.log(userData)
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+    console.log(err);
+  }
+});
 
 // TODO: User /login route (POST method with 'findOne') --> "sign-in"
 router.post('/login', async (req, res) => {
@@ -63,7 +86,16 @@ router.post('/login', async (req, res) => {
 });
 
 // TODO: User /logout route (POST method with 'destroy') --> "logout"
-
+router.post('/logout', (req, res) => {
+  // DESTROY the user's session when the user logs out
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
 
 
 

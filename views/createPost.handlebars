@@ -1,0 +1,23 @@
+{{!-- User's view once they click on the "New Post" button option from the dashboard page. Displays "Your Dashboard" with "Create New Post" text box to create new blog post by clicking 'create' button option --}}
+
+{{!-- TODO: Use helper functions if needed--}}
+<h1>Your Dashboard</h1>
+<div class="card">
+  <div class="card-header">
+    <h2>Create New Post</h2>
+  </div>
+  <form id="create-post-form" class="card-body">
+    <div>
+      <label class="form-label" for="create-title">Title:</label>
+      <input type="text" id="create-title" />
+    </div>
+        <div>
+      <label class="form-label" for="create-contents">Content:</label>
+      <input type="text" id="create-contents" />
+    </div>
+    <button href="/api/blogPosts" id="create-btn" class="btn" type="submit">Create</button>
+  </form>
+</div>
+
+<script src="/js/createPost.js"></script>
+

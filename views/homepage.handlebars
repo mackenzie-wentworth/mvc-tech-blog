@@ -1,6 +1,6 @@
 {{!-- User's view once the user clicks on the homepage. Displays all existing blog posts from all users --}}
 
-<h1>Kenzie's Tech Blog</h1>
+<h1>The Tech Blog</h1>
 {{!-- TODO: Use helper functions --}}
 <div>
     {{#each blogPosts as |blogPost| }}
@@ -11,6 +11,7 @@
             </h2>
             <div>
                 <p>Posted by {{blogPost.user.username}} on {{format_date blogPost.date_created}}</p>
+                <p class="card-text">{{blogPost.contents}}</p>
             </div>
         </div>
     </article>
