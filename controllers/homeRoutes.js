@@ -100,9 +100,12 @@ router.get('/dashboard', withAuth, async (req, res) => {
 });
 
 // // TODO: From Dashboard --> GET method for "+New Post" button that allows user to create/add a new blog post from the main page of the dashboard. Clicking the "+New Post" button will take the user to the "Create New Post" page
-router.get('/new', withAuth, (req, res) =>
-    res.render('createPost')
-);
+router.get('/new', withAuth, (req, res) => {
+  console.log(req.session);
+  res.render('createPost', {
+    logged_in: req.session.logged_in,
+  });
+});
 
 // // TODO: From Dashboard --> GET method for user to click on existing blog post from dashboard page that takes them to an 'Edit Blog Post' page
 router.get("/edit/:id", withAuth, (req, res) => {
