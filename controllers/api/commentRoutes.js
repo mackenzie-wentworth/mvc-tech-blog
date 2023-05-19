@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
       });
   });
 
-// TODO: POST method to all user to CREATE a COMMENT (comment added to a single blog post)
+// TODO: POST method to allow user to CREATE a COMMENT (comment added to a single blog post)
 router.post("/", withAuth, (req, res) => {
     Comment.create({ ...req.body, userId: req.session.user_id })
         .then(addComment => {
