@@ -29,11 +29,9 @@
 
 :root {
   --primary: #ffffff;
-  --timberwolf: #D6CCC2;
-  --linen: #F5EBE0;
-  --champagnepink: #E3D5CA;
-  --paledogwood: #D5BDAF;
-  --redwood: #B36A5E;
+  --secondary: #d3f0ea;
+  --tertiary: #118383;
+  --quaternary: rgb(28, 255, 221); 
   --border-radius: 0.2rem;
 }
 
@@ -42,10 +40,23 @@
 } */
 body {
   height: 100vh;
-  background-color: var(--champagnepink);
+  background-color: var(--secondary);
 }
 
-header, h1 {
-  background-color: var(--redwood);
-  color: var(--champagnepink) !important;
+nav, h1 {
+  background-color: var(--tertiary);
+  color: var(--quaternary) !important;
+}
+
+.card {
+  background-color: var(--secondary);
+}
+
+.card-header {
+  background-color: var(--tertiary);
+  color: var(--primary);
+}
+
+h2 a {
+  color: var(--primary);
 }
