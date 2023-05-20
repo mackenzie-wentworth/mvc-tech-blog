@@ -1,7 +1,38 @@
+/* :root {
+  --primary: #ffffff;
+  --mintcream: #F1F7ED;
+  --darkslategray: #243E36;
+  --cambridgeblue: #7CA982;
+  --nyanza: #E0EEC6;
+  --oldgold: #C2A83E;
+  --border-radius: 0.2rem;
+} */
 :root {
   --primary: #ffffff;
-  --secondary: #db5c6b;
-  --tertiary: #fbc6ea;
-  --dark: #48042f;
+  --seashell: #EEE2DF;
+  --champagnepink: #EED7C5;
+  --rosybrown: #C89F9C;
+  --burntsienna: #C97C5D;
+  --redwood: #B36A5E;
   --border-radius: 0.2rem;
 }
+
+/* :root {
+  --primary: #ffffff;
+  --oxfordblue: #0B132B;
+  --spacecadet: #1C2541;
+  --vinmnblue: #3A506B;
+  --verdigris: #5BC0BE;
+  --fluorrescentcyan: #6FFFE9;
+  --border-radius: 0.2rem;
+} */
+
+/* :root {
+  --primary: #ffffff;
+  --timberwolf: #D6CCC2;
+  --linen: #F5EBE0;
+  --champagnepink: #E3D5CA;
+  --paledogwood: #D5BDAF;
+  --redwood: #B36A5E;
+  --border-radius: 0.2rem;
+} */
