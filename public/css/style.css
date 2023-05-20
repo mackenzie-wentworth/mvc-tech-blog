@@ -29,9 +29,9 @@
 
 :root {
   --primary: #ffffff;
-  --secondary: #d3f0ea;
-  --tertiary: #118383;
-  --quaternary: rgb(28, 255, 221); 
+  --secondary: rgb(244, 234, 222);
+  --tertiary: rgb(222, 156, 168);
+  --quaternary: rgb(226, 0, 102); 
   --border-radius: 0.2rem;
 }
 
@@ -46,6 +46,7 @@ body {
 nav, h1 {
   background-color: var(--tertiary);
   color: var(--quaternary) !important;
+  padding: 0 15px;
 }
 
 .card {
