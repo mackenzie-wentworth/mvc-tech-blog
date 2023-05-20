@@ -15,35 +15,31 @@
 </head>
 
 <body>
-    <header id="navbar" class="text-tertiary">
-        <nav class="navbar">
-            <ul>
-                {{!-- TODO: Use helper functions --}}
-                {{#if logged_in}}
-                <li><a href="/">Home</a></li>
-                <li><a href="/dashboard">Dashboard</a></li>
-                {{!-- <li><a href="/login">Login</a></li> --}}
-                <li><a href="/api/users/logout" id="logout">Logout</a></li>
-                {{else}}
-                <li><a href="/">Home</a></li>
-                <li><a href="/dashboard">Dashboard</a></li>
-                <li><a href="/login">Login</a></li>
-                {{/if}}
-            </ul>
-        </nav>
+    <header id="navbar">
+        {{!-- TODO: Use helper functions --}}
+        {{#if logged_in}}
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/api/users/logout" id="logout">Logout</a>
+        {{else}}
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/login">Login</a>
+        {{/if}}
     </header>
     <main class="container container-fluid mt-5">
         <!-- TODO: Render the sub layout using {{{body}}} in 'main' section (where 'body' acts as a placeholder for where the main content will be rendered)-->
         {{{ body }}}
     </main>
-    <footer>
-
-    </footer>
-
-
 
     <!-- Render script for logged in users only -->
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
+
+    <footer class="footer">
+            &copy;<script>document.write(new Date().getFullYear());</script> MacKenzie Wentworth
+    </footer>
 </body>
+
+</html>
