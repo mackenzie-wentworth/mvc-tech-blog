@@ -7,7 +7,7 @@
   --oldgold: #C2A83E;
   --border-radius: 0.2rem;
 } */
-:root {
+/* :root {
   --primary: #ffffff;
   --seashell: #EEE2DF;
   --champagnepink: #EED7C5;
@@ -15,7 +15,7 @@
   --burntsienna: #C97C5D;
   --redwood: #B36A5E;
   --border-radius: 0.2rem;
-}
+} */
 
 /* :root {
   --primary: #ffffff;
@@ -27,7 +27,7 @@
   --border-radius: 0.2rem;
 } */
 
-/* :root {
+:root {
   --primary: #ffffff;
   --timberwolf: #D6CCC2;
   --linen: #F5EBE0;
@@ -35,4 +35,8 @@
   --paledogwood: #D5BDAF;
   --redwood: #B36A5E;
   --border-radius: 0.2rem;
-} */
+}
+
+#navbar {
+  background-color: var(--redwood);
+}
