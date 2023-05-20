@@ -37,6 +37,15 @@
   --border-radius: 0.2rem;
 }
 
-#navbar {
+/* #navbar {
   background-color: var(--redwood);
+} */
+body {
+  height: 100vh;
+  background-color: var(--champagnepink);
+}
+
+header, h1 {
+  background-color: var(--redwood);
+  color: var(--champagnepink) !important;
 }
