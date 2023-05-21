@@ -2,7 +2,7 @@
 for title and content with 'Update Post' button option. Also shows 'Delete' button option to delete post.--}}
 
 {{!-- TODO: Use helper functions if needed--}}
-<h1>Your Dashboard</h1>
+<h1 class="pl-5 pb-3 mt-n1">Your Dashboard</h1>
 {{!-- <div class="card">
     <div class="card-header">
         <a href="/dashboard"> &larr; Back to Dashboard</a>
@@ -49,8 +49,10 @@ for title and content with 'Update Post' button option. Also shows 'Delete' butt
             <textarea type="text" class="form-control" id="edit-contents" rows="3">{{blogPost.contents}}</textarea>
         </div>
 
-        <div class="text-center">
+        <div class="text-center mt-n4">
             <button type="submit" class="btn">Update</button>
+        </div>
+        <div class="text-center mt-n5">
             <button type="button" class="btn" id="delete-btn">Delete</button>
         </div>
     </form>
