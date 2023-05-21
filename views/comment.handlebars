@@ -3,7 +3,7 @@
 
 {{!-- TODO: Use helper functions --}}
 <h1>The Tech Blog</h1>
-<div>
+{{!-- <div>
   <article class="card">
     <div class="card-header flex-row justify-space-between">
       <h2>{{title}}</h2>
@@ -23,10 +23,15 @@
     </div>
     {{/each}}
   </section>
-</div>
+</div> --}}
 
 
 {{!-- ------ --}}
+<div class="pl-3 py-3">
+    <a id="switchPage" href="/">
+        <small class="form-text text-muted">&larr; Back to Homepage</small>
+    </a>
+</div>
 
   <div class="card mx-auto w-75 p-3">
     <div class="card-header comment-post">
@@ -38,8 +43,7 @@
     <div class="card-body">
       <p class="card-text">{{contents}}</p>
     </div>
-  </div>
-
+  </div><br>
 
 <div class="card-header comments mx-auto w-75 p-1">
 <h5 id="comment-header">User Comments</h5>

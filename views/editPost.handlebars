@@ -27,15 +27,20 @@ for title and content with 'Update Post' button option. Also shows 'Delete' butt
 </div> --}}
 
 {{!-- ------------------------------------ --}}
+<div class="pl-3 py-3">
+    <a id="switchPage" href="/dashboard">
+        <small class="form-text text-muted">&larr; Back to Dashboard</small>
+    </a>
+</div>
+
 <div class="card mx-auto w-75 p-3">
-    <a id="switchPage" href="/dashboard">&larr; Back to Dashboard</a>
-    <div class="card-header">
-        <h2>Edit Post</h2>
+    <div class="card-header pb-1">
+        <h4>Edit Post</h4>
     </div>
 
     <form id="edit-post-form">
         <div class="form-group">
-            <label for="edit-title">Title:</label>
+            <label class="form-label" for="edit-title">Title:</label>
             <input type="text" class="form-control" id="edit-title" value="{{blogPost.title}}" />
         </div>
 

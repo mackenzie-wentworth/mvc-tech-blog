@@ -10,7 +10,6 @@
   --tertiary: rgb(222, 156, 168);
   --quaternary: rgb(226, 0, 102); 
   --dark: rgb(73, 72, 72);
-  /* --border-radius: 0.2rem; */
 }
 
 /* #navbar {
@@ -35,7 +34,7 @@ nav, h1 {
 .card-header {
   background-color: var(--tertiary);
   /* color: var(--primary); */
-  padding: 10px;
+  /* padding: 5px; */
   /* margin-bottom: 20px; */
 }
 
@@ -44,10 +43,6 @@ nav, h1 {
 } */
 
 .card h6, .card p {
-  font-style: normal;
-}
-
-.card p {
   font-style: normal;
 }
 
