@@ -115,7 +115,8 @@ router.get("/edit/:id", withAuth, (req, res) => {
                 const blogPost = editPostData.get({ plain: true });
 
                 res.render("editPost", {
-                    blogPost
+                    blogPost,
+                    logged_in: req.session.logged_in,
                 });
             } else {
                 res.status(404).end();
