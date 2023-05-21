@@ -1,53 +1,28 @@
 {{!-- User's view once the user clicks option from navigation to "login" and selects "Sign Up Instead." Displays signup
 form with 'sign up' button. Also has alternative 'login' button option to "login instead" --}}
 
-{{!-- TODO: Use helper functions --}}
 <h1 class="pl-5 pb-3 mt-n1 mb-4">The Tech Blog</h1>
 
-{{!-- <div class="card">
-  <div class="card-header">
-    <h2>Sign Up</h2>
-  </div>
-  <form id="signup-form" class="card-body">
-    <div>
-      <label for="username-signup">Username:</label>
-      <input type="text" id="username-signup" />
-    </div>
-    <div>
-      <label for="email-signup">Email:</label>
-      <input type="text" id="email-signup" />
-    </div>
-    <div>
-      <label for="password-signup">Password:</label>
-      <input type="password" id="password-signup" />
-    </div>
-    <button type="submit" id="signup-btn" class="btn">Sign Up</button>
-  </form>
-
-  <a id="loginOption" type="button" href="/login">Login Instead</a>
-</div> --}}
-
-{{!-- ----------------------------------------- --}}
-
 <div class="card mx-auto w-75 p-3">
-  <div class="card-header">
-    <h2>Sign Up</h2>
+  <div class="card-header pb-1">
+    <h4>Sign Up</h4>
   </div>
 
   <form id="signup-form">
     <div class="form-group">
       <label class="form-label" for="username-signup">Username:</label>
-      <input type="text" class="form-control" id="username-signup" placeholder="Create username"/>
+      <input type="text" class="form-control" id="username-signup" placeholder="Create username" />
     </div>
 
     <div class="form-group">
       <label for="email-signup">Email Address:</label>
-      <input type="email" class="form-control" id="email-signup" aria-describedby="emailHelp" placeholder="Your email"/>
+      <input type="email" class="form-control" id="email-signup" aria-describedby="emailHelp"
+        placeholder="Your email" />
     </div>
 
     <div class="form-group">
       <label for="password-signup">Password:</label>
-      <input type="password" class="form-control" id="password-signup" placeholder="Create password"/>
+      <input type="password" class="form-control" id="password-signup" placeholder="Create password" />
       <small class="form-text text-muted">Password must contain at least 10 characters*</small>
     </div>
 

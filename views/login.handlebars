@@ -1,48 +1,22 @@
 {{!-- User's view once the user clicks option from navigation to "login." Displays login form with 'login' button. Also
 has alternative 'sign up' button option to "sign up instead" --}}
 
-{{!-- TODO: Use helper functions --}}
 <h1 class="pl-5 pb-3 mt-n1 mb-4">The Tech Blog</h1>
 
-{{!-- <div class="card mx-auto w-75 p-3">
-  <div class="card-header">
-    <h2>Login</h2>
-  </div>
-  <form id="login-form" class="card-body mx-auto col-10 col-md-8 col-lg-6">
-    <div>
-      <label for="username-login">Username:</label>
-      <input type="text" id="username-login" />
-    </div>
-    <div>
-      <label for="password-login">Password:</label>
-      <input type="password" id="password-login" />
-    </div>
-    <div class="text-center">
-      <button type="submit" id="login-btn" class="btn">Login</button>
-    </div>
-    
-  </form>
-
-  <a id="loginOption" type="button" href="/signup">Sign Up Instead</a>
-</div> --}}
-
-{{!-- ----------------------------------------- --}}
-
-
 <div class="card mx-auto w-75 p-3">
-  <div class="card-header">
-    <h2>Login</h2>
+  <div class="card-header pb-1">
+    <h4>Login</h4>
   </div>
 
-  <form id="login-form" >
+  <form id="login-form">
     <div class="form-group">
       <label class="form-label" for="username-login">Username:</label>
-      <input type="text" class="form-control" id="username-login" placeholder="Enter username"/>
+      <input type="text" class="form-control" id="username-login" placeholder="Enter username" />
     </div>
 
     <div class="form-group">
       <label for="password-login">Password:</label>
-      <input type="password" class="form-control" id="password-login" placeholder="Enter password"/>
+      <input type="password" class="form-control" id="password-login" placeholder="Enter password" />
     </div>
 
     <div class="text-center mt-n4">
@@ -51,7 +25,7 @@ has alternative 'sign up' button option to "sign up instead" --}}
   </form>
 
   <div class="text-center">
-  <a type="button" id="switchPage" href="/signup">Sign Up Instead</a>
+    <a type="button" id="switchPage" href="/signup">Sign Up Instead</a>
   </div>
 
 </div>

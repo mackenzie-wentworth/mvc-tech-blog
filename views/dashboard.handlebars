@@ -5,8 +5,11 @@ blogpost to EDIT. --}}
 {{!-- Dashboard populates all newly created blogposts once user clicks the "Create" button from the 'Create New Post'
 page --}}
 
-{{!-- TODO: Use helper functions --}}
 <h1 class="pl-5 pb-3 mt-n1 mb-4">Your Dashboard</h1>
+
+<form class="mt-n3" id="select-create-post">
+    <button href="/new" class="btn btn-lg" type="submit">+ New Post</button>
+</form>
 
 {{#each blogPosts as |blogPost| }}
 <div class="card mx-auto w-75 p-3">
@@ -21,10 +24,6 @@ page --}}
   </div>
 </div><br>
 {{/each}}
-
-<form class="text-center" id="select-create-post">
-    <button href="/new" class="btn btn-lg" type="submit">+ New Post</button>
-</form>
 
 <script src="/js/newPostButton.js"></script>
 <script src="/js/editPost.js"></script>

@@ -1,7 +1,6 @@
 {{!-- User's view once user clicks on an existing blog post from the homepage. Displays the selected blog post and
-"comment" text box form with 'submit' button to submit comment --}}
+"comment" form with 'submit' button to submit comment --}}
 
-{{!-- TODO: Use helper functions --}}
 <h1 class="pl-5 pb-3 mt-n1">The Tech Blog</h1>
 
 {{!-- Back to Homepage arrow --}}
@@ -22,12 +21,13 @@
     <p class="card-text">{{contents}}</p>
   </div>
 
-{{!-- Create new Comment form --}}
+  {{!-- Create new Comment form --}}
   {{#if logged_in}}
   <form id="add-comment-form">
     <div class="form-group text-center mt-5">
       <input type="hidden" value="{{blogPost.id}}" />
-      <textarea class="form-input mx-auto w-75 pl-2 pt-2" id="add-comment" placeholder="Type comment here..." rows="4"></textarea>
+      <textarea class="form-input mx-auto w-75 pl-2 pt-2" id="add-comment" placeholder="Type comment here..."
+        rows="4"></textarea>
     </div>
 
     <div class="text-center mt-n5">
