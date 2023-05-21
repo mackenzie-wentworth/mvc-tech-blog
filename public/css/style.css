@@ -50,8 +50,8 @@ a {
   color: var(--primary);
 }
 
-a:visited {
-  color: var(--primary);
+a:hover {
+  color: var(--quaternary);
 }
 
 .form-label {
@@ -59,10 +59,10 @@ a:visited {
 }
 
 .btn {
-  font-size: 1.3rem;
+  font-size: 1rem;
   text-decoration: none;
   margin: 2em;
-  border-radius: var(--border-radius);
+  /* border-radius: var(--border-radius); */
   color: var(--primary);
   border: none;
   outline: none;
