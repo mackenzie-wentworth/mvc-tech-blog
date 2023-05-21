@@ -1,38 +1,6 @@
 {{!-- User's view once the user clicks on the homepage. Displays all existing blog posts from all users --}}
 
 <h1 class="pl-5 pb-3 mt-n1 mb-4">The Tech Blog</h1>
-{{!-- TODO: Use helper functions --}}
-{{!-- <div class="blogPosts">
-    {{#each blogPosts as |blogPost| }}
-    <article class="card">
-        <div class="card-header">
-            <h2>
-                <a href="/blogPost/{{blogPost.id}}">{{blogPost.title}}</a>
-            </h2>
-            <div>
-                Posted by {{blogPost.user.username}} on {{format_date blogPost.date_created}}
-            </div>
-        </div>
-        <div class="card-body">{{blogPost.contents}}</div>
-    </article>
-    {{/each}}
-</div> --}}
-
-{{!-- <div>
-    {{#each blogPosts as |blogPost| }}
-    <article class="card">
-        <a class="card-body" href="/blogPost/{{blogPost.id}}">
-            <div class="card-header">
-                <h5 class="d-inline-block card-title">{{blogPost.title}}</h5>
-                <h6 class="d-inline-block float-right margin-top" style="margin-top:.2rem;"><i>Posted by
-                        {{blogPost.user.username}} on {{format_date
-                        blogPost.date_created}}</i></h6>
-            </div>
-        </a>
-        <p class="card-text">{{blogPost.contents}}</p>
-    </article>
-    {{/each}}
-</div> --}}
 
 {{#each blogPosts as |blogPost| }}
 <div class="card mx-auto w-75 p-3">

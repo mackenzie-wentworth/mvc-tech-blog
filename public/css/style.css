@@ -42,8 +42,9 @@ nav, h1 {
   color: var(--primary);
 } */
 
-.card h6, .card p {
+.card p {
   font-style: normal;
+  color: var(--)
 }
 
 a {
@@ -79,6 +80,10 @@ a:hover {
   margin-bottom: 20px;
 }
 
+#comment-single-post {
+  color:var(--primary);
+}
+
 .comments {
   background-color: var(--dark);
 }
@@ -87,6 +92,4 @@ a:hover {
   color:var(--primary);
 }
 
-.comment-post {
-  color:var(--primary);
-}
+
