@@ -10,7 +10,7 @@
   --tertiary: rgb(222, 156, 168);
   --quaternary: rgb(226, 0, 102); 
   --dark: rgb(73, 72, 72);
-  --border-radius: 0.2rem;
+  /* --border-radius: 0.2rem; */
 }
 
 /* #navbar {
@@ -34,13 +34,13 @@ nav, h1 {
 
 .card-header {
   background-color: var(--tertiary);
-  color: var(--primary);
+  /* color: var(--primary); */
   padding: 5px;
 }
 
-.card-title {
-  color: var(--quaternary);
-}
+/* .card-title {
+  color: var(--primary);
+} */
 
 .card h6, .card p {
   font-style: normal;
@@ -56,7 +56,7 @@ a {
 }
 
 a:visited {
-  color: var(--quaternary);
+  color: var(--primary);
 }
 
 .btn {
