@@ -9,6 +9,7 @@
   --secondary: rgb(244, 234, 222);
   --tertiary: rgb(222, 156, 168);
   --quaternary: rgb(226, 0, 102); 
+  --dark: rgb(73, 72, 72);
   --border-radius: 0.2rem;
 }
 
@@ -28,7 +29,7 @@ nav, h1 {
 }
 
 .card {
-  background-color: var(--tertiary);
+  background-color: var(--secondary);
 }
 
 .card-header {
@@ -50,29 +51,26 @@ nav, h1 {
   padding: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-.card {
-  background-color: var(--secondary);
-}
-
-.card-header {
-  background-color: var(--tertiary);
+a {
   color: var(--primary);
 }
 
-h2 a {
-  color: var(--primary);
-}
-
-h2 a:visited {
+a:visited {
   color: var(--quaternary);
+}
+
+.btn {
+  font-size: 1.3rem;
+  text-decoration: none;
+  margin: 2em;
+  border-radius: var(--border-radius);
+  color: var(--primary);
+  border: none;
+  outline: none;
+  background-color: var(--dark);
+}
+
+.btn:hover {
+  color: var(--primary);
+  background-color: var(--quaternary);
 }
