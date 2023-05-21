@@ -12,6 +12,8 @@
   --dark: rgb(73, 72, 72);
 }
 
+
+
 body {
   height: 100vh;
   background-color: var(--secondary);
@@ -22,24 +24,36 @@ nav, h1 {
   color: var(--quaternary) !important;
 }
 
+h1 {
+  font-family: 'Source Serif Pro', serif;
+}
+
 .card {
   background-color: var(--secondary);
 }
 
 .card-header {
+  font-family: 'Source Serif Pro', serif;
   background-color: var(--tertiary);
 }
 
 .card p {
   font-style: normal;
-  color: var(--)
+  color: var(--dark)
 }
 
-a {
+a, 
+h4,
+#comment-header {
   color: var(--primary);
 }
 
 a:hover {
+  color: var(--quaternary);
+}
+
+small {
+  font-family: 'Source Serif Pro', serif;
   color: var(--quaternary);
 }
 
@@ -75,8 +89,5 @@ a:hover {
   background-color: var(--dark);
 }
 
-#comment-header {
-  color:var(--primary);
-}
 
 
