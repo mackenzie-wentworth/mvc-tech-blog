@@ -1,14 +1,14 @@
 [
     {
-      
-      "username": "Kenzie22",
-      "email": "mwentworth@hmail.com",
-      "password": "myPassword123"
+      "id": 1,
+      "username": "Edward11",
+      "email": "edward@gmail.com",
+      "password": "Edward1234"
     },
     {
-      
-      "username": "Ben44",
-      "email": "ben@hmail.com",
-      "password": "bennyboy12345"
+      "id": 2,
+      "username": "Kenzie22",
+      "email": "mwentworth@gmail.com",
+      "password": "myPassword123"
     }
   ]

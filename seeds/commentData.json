@@ -1,12 +1,7 @@
 [
     {
-      "comment_body": "This is my first comment",
+      "comment_body": "Hello! Here is my comment for blog post 1 :)",
       "user_id": 2,
       "blogPost_id": 1
-    },
-    {
-      "comment_body": "This is my second comment",
-      "user_id": 1,
-      "blogPost_id": 2
     }
 ]
