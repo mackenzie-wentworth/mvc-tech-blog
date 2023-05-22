@@ -22,8 +22,7 @@ const loginFormHandler = async (event) => {
         }
     }
 };
-
-
+// ______________________________________________________________
 // TODO: Set up async event for 'signupFormHandler'
 const signupFormHandler = async (event) => {
     event.preventDefault();
@@ -39,55 +38,28 @@ const signupFormHandler = async (event) => {
     }
     console.log(newUser)
     // TODO: Send POST request to API endpoint
-    fetch("/api/users/",{
-        method:"POST",
-        body:JSON.stringify(newUser),
-        headers:{
-            "Content-Type":"application/json"
+    fetch("/api/users/", {
+        method: "POST",
+        body: JSON.stringify(newUser),
+        headers: {
+            "Content-Type": "application/json"
         }
-    
-    }).then(res=>{
-        if(res.ok){
+
+    }).then(res => {
+        if (res.ok) {
             console.log("user is signed up")
-             // TODO: Redirect the browser to the user's view of user's dashboard page (if user signup is successful)
+            // TODO: Redirect the browser to the user's view of user's dashboard page (if user signup is successful)
             document.location.replace('/dashboard')
         } else {
             alert("please try again")
         }
     })
 }
-
-// const signupFormHandler = async (event) => {
-//     event.preventDefault();
-
-//     const username = document.querySelector('#username-signup').value.trim();
-//     const email = document.querySelector('#email-signup').value.trim();
-//     const password = document.querySelector('#password-signup').value.trim();
-
-//     // TODO: Send POST request to API endpoint
-//     if (username && email && password) {
-//         const response = await fetch('/api/users/signup', {
-//             method: 'POST',
-//             body: JSON.stringify({ username, email, password }),
-//             headers: { 'Content-Type': 'application/json' },
-//         });
-
-//         if (response.ok) {
-//             // TODO: Redirect the browser to the user's view of user's dashboard page (if user signup is successful)
-//             document.location.replace('/dashboard');
-//         } else {
-//             alert(response.statusText);
-//         }
-//     }
-// };
-
-
-
-
+// ______________________________________________________________
 // TODO: Create "document" querySelector and addEventListener for loginFormHandler (through submit button)
 document
-  .querySelector('#login-form')?.addEventListener('submit', loginFormHandler);
+    .querySelector('#login-form')?.addEventListener('submit', loginFormHandler);
 
 // TODO: Create "document" querySelector and addEventListener for signupFormHandler (through submit button)
 document
-  .querySelector('#signup-form')?.addEventListener('submit', signupFormHandler);
+    .querySelector('#signup-form')?.addEventListener('submit', signupFormHandler);

@@ -7,15 +7,6 @@ const userData = require('./userData.json');
 const blogPostData = require('./blogPostData.json');
 const commentData = require('./commentData.json');
 
-// const seedDatabase = async () => {
-//     await sequelize.sync({ force: true });
-//     await userData();
-//     await blogPostData();
-//     // await commentData();
-//     process.exit(0);
-//   };
-
-
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
   
@@ -41,6 +32,5 @@ const seedDatabase = async () => {
     process.exit(0);
   };
   
-
 // TODO: Call seedDatabase() function
 seedDatabase();

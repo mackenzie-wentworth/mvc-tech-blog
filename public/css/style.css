@@ -1,0 +1,86 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #ffffff;
+  --secondary: rgb(244, 234, 222);
+  --tertiary: rgb(222, 156, 168);
+  --quaternary: rgb(226, 0, 102);
+  --dark: rgb(73, 72, 72);
+}
+
+body {
+  height: 100vh;
+  background-color: var(--secondary);
+}
+
+nav,
+h1 {
+  background-color: var(--tertiary);
+  color: var(--quaternary) !important;
+}
+
+h1 {
+  font-family: 'Source Serif Pro', serif;
+}
+
+.card {
+  background-color: var(--secondary);
+}
+
+.card-header {
+  font-family: 'Source Serif Pro', serif;
+  background-color: var(--tertiary);
+}
+
+.card p {
+  font-style: normal;
+  color: var(--dark)
+}
+
+.comments {
+  background-color: var(--dark);
+}
+
+a,
+h4,
+#comment-header,
+#comment-single-post {
+  color: var(--primary);
+}
+
+a:hover {
+  color: var(--quaternary);
+}
+
+small {
+  font-family: 'Source Serif Pro', serif;
+  color: var(--quaternary);
+}
+
+.btn {
+  font-size: 1rem;
+  text-decoration: none;
+  margin: 2em;
+  color: var(--primary);
+  border: none;
+  outline: none;
+  background-color: var(--dark);
+}
+
+.btn:hover {
+  color: var(--primary);
+  background-color: var(--quaternary);
+}
+
+#switchPage {
+  color: var(--dark);
+  margin-bottom: 20px;
+}
+
+.form-label {
+  margin-top: 20px;
+}

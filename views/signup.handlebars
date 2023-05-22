@@ -1,29 +1,40 @@
-{{!-- User's view once the user clicks option from navigation to "login" and selects "Sign Up Instead." Displays signup form with 'sign up' button. Also has alternative 'login' button option to "login instead" --}}
+{{!-- User's view once the user clicks option from navigation to "login" and selects "Sign Up Instead." Displays signup
+form with 'sign up' button. Also has alternative 'login' button option to "login instead" --}}
 
-{{!-- TODO: Use helper functions --}}
-<h1>The Tech Blog</h1>
+<h1 class="pl-5 pb-3 mt-n1 mb-4">The Tech Blog</h1>
 
-<div class="card">
-  <div class="card-header">
-    <h2>Sign Up</h2>
+<div class="card mx-auto w-75 p-2">
+  <div class="card-header pb-1">
+    <h4>Sign Up</h4>
   </div>
-  <form id="signup-form" class="card-body">
-    <div>
-      <label for="username-signup">Username:</label>
-      <input type="text" id="username-signup" />
+
+  <form id="signup-form">
+    <div class="form-group">
+      <label class="form-label" for="username-signup">Username:</label>
+      <input type="text" class="form-control" id="username-signup" placeholder="Create username" />
     </div>
-        <div>
-      <label for="password-signup">Email:</label>
-      <input type="text" id="email-signup" />
+
+    <div class="form-group">
+      <label for="email-signup">Email Address:</label>
+      <input type="email" class="form-control" id="email-signup" aria-describedby="emailHelp"
+        placeholder="Your email" />
     </div>
-    <div>
+
+    <div class="form-group">
       <label for="password-signup">Password:</label>
-      <input type="password" id="password-signup" />
+      <input type="password" class="form-control" id="password-signup" placeholder="Create password" />
+      <small class="form-text text-muted">Password must contain at least 10 characters*</small>
     </div>
-    <button type="submit" id="signup-btn" class="btn">Sign Up</button>
+
+    <div class="text-center mt-n4">
+      <button type="submit" class="btn btn-primary btn-sm" id="signup-btn">Sign Up!</button>
+    </div>
   </form>
 
-  <a type="button" href="/login">Login Instead</a>
+  <div class="text-center">
+    <a type="button" id="switchPage" href="/login">Login Instead</a>
+  </div>
+
 </div>
 
 <script src="./js/loginSignup.js"></script>

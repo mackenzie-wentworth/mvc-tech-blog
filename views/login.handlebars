@@ -1,26 +1,33 @@
 {{!-- User's view once the user clicks option from navigation to "login." Displays login form with 'login' button. Also
 has alternative 'sign up' button option to "sign up instead" --}}
 
-{{!-- TODO: Use helper functions --}}
-<h1>The Tech Blog</h1>
+<h1 class="pl-5 pb-3 mt-n1 mb-4">The Tech Blog</h1>
 
-<div class="card">
-  <div class="card-header">
-    <h2>Login</h2>
+<div class="card mx-auto w-75 p-2">
+  <div class="card-header pb-1">
+    <h4>Login</h4>
   </div>
-  <form id="login-form" class="card-body">
-    <div>
-      <label for="username-login">Username:</label>
-      <input type="text" id="username-login" />
+
+  <form id="login-form">
+    <div class="form-group">
+      <label class="form-label" for="username-login">Username:</label>
+      <input type="text" class="form-control" id="username-login" placeholder="Enter username" />
     </div>
-    <div>
+
+    <div class="form-group">
       <label for="password-login">Password:</label>
-      <input type="password" id="password-login" />
+      <input type="password" class="form-control" id="password-login" placeholder="Enter password" />
     </div>
-    <button type="submit" id="login-btn" class="btn">Login</button>
+
+    <div class="text-center mt-n4">
+      <button type="submit" class="btn btn-primary btn-sm" id="login-btn">Login!</button>
+    </div>
   </form>
 
-  <a type="button" href="/signup">Sign Up Instead</a>
+  <div class="text-center">
+    <a type="button" id="switchPage" href="/signup">Sign Up Instead</a>
+  </div>
+
 </div>
 
 <script src="./js/loginSignup.js"></script>
