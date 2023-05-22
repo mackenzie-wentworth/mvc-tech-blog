@@ -50,6 +50,7 @@
 
 
 ### *Video Demonstration:*
+[video-demo-tech-blog.webm](https://github.com/mackenzie-wentworth/mvc-tech-blog/assets/122484637/3a0c7071-d908-4b6d-861b-42688f6fbd44)
 
 
 ---
