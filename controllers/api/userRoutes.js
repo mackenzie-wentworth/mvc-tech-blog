@@ -1,17 +1,8 @@
 // Prompt user to SIGN IN, SIGN UP, LOGOUT
 
-// TODO: Import dependencies, including express 'router' 
+// TODO: Import dependencies
 const router = require("express").Router();
-const { User, BlogPost, Comment} = require("../../models/");
-
-// router.get('/', async (req, res) => {
-//   try {
-//     res.render('homepage');
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
+const { User } = require("../../models/");
 
 router.post('/', async (req, res) => {
   try {
@@ -27,6 +18,7 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
 // TODO: Create new user (POST method with 'create') --> "sign-up"
 // Create a new user based on the data we receive from the signup form on the login page. 
 router.post('/signup', async (req, res) => {
@@ -76,7 +68,7 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
+
       res.json({ user: userData, message: 'You are now logged in!' });
     });
 
@@ -96,10 +88,5 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
-
-
-
-
-
 
 module.exports = router;

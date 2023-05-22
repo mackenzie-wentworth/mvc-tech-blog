@@ -3,35 +3,34 @@
 
 const blogPost_id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
-  ];
+];
 
 // TODO: Set up async event for 'updatePostFormHandler'
 const updatePostFormHandler = async (event) => {
     event.preventDefault()
 
-// // TODO: Set up querySelectors for 'update post' form
-const title = document.querySelector('#edit-title').value.trim();
-const contents = document.querySelector('#edit-contents').value.trim();
+    // // TODO: Set up querySelectors for 'update post' form
+    const title = document.querySelector('#edit-title').value.trim();
+    const contents = document.querySelector('#edit-contents').value.trim();
 
-// // TODO: Send PUT request to API endpoint
-if (title && contents) {
-    const updateBlogPost = await fetch(`/api/blogPosts/${blogPost_id}`, {
-        method: "PUT",
-        body: JSON.stringify({ title, contents}),
-        headers: { 
-            'Content-Type': 'application/json'
-        },
-     
-    })
-    if (updateBlogPost.ok) {
-        // TODO: Redirect the browser to the user's view of user's dashboard page (if user 'update post' is successful)
-        document.location.replace('/dashboard')
-    } else {
-        alert("Sorry, unable to update your blog post succesffuly!")
+    // // TODO: Send PUT request to API endpoint
+    if (title && contents) {
+        const updateBlogPost = await fetch(`/api/blogPosts/${blogPost_id}`, {
+            method: "PUT",
+            body: JSON.stringify({ title, contents }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+
+        })
+        if (updateBlogPost.ok) {
+            // TODO: Redirect the browser to the user's view of user's dashboard page (if user 'update post' is successful)
+            document.location.replace('/dashboard')
+        } else {
+            alert("Sorry, unable to update your blog post succesffuly!")
+        }
     }
 }
-}
-
 // ______________________________________________________________
 // TODO: Set up async event for 'deleteButtonHandler'
 const deleteButtonHandler = async (event) => {
@@ -52,8 +51,8 @@ const deleteButtonHandler = async (event) => {
 // ______________________________________________________________
 // TODO: Create "document" querySelector and addEventListener for when user clicks "update" option (through submit button)
 document
-	.querySelector('#edit-post-form').addEventListener('submit', updatePostFormHandler);
+    .querySelector('#edit-post-form').addEventListener('submit', updatePostFormHandler);
 
 // TODO: Create "document" querySelector and addEventListener for when user clicks "delete" option (through submit button)
 document
-	.querySelector('#delete-btn').addEventListener('click', deleteButtonHandler);
+    .querySelector('#delete-btn').addEventListener('click', deleteButtonHandler);

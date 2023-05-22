@@ -8,18 +8,17 @@
   --primary: #ffffff;
   --secondary: rgb(244, 234, 222);
   --tertiary: rgb(222, 156, 168);
-  --quaternary: rgb(226, 0, 102); 
+  --quaternary: rgb(226, 0, 102);
   --dark: rgb(73, 72, 72);
 }
-
-
 
 body {
   height: 100vh;
   background-color: var(--secondary);
 }
 
-nav, h1 {
+nav,
+h1 {
   background-color: var(--tertiary);
   color: var(--quaternary) !important;
 }
@@ -42,9 +41,14 @@ h1 {
   color: var(--dark)
 }
 
-a, 
+.comments {
+  background-color: var(--dark);
+}
+
+a,
 h4,
-#comment-header {
+#comment-header,
+#comment-single-post {
   color: var(--primary);
 }
 
@@ -55,10 +59,6 @@ a:hover {
 small {
   font-family: 'Source Serif Pro', serif;
   color: var(--quaternary);
-}
-
-.form-label {
-  margin-top: 20px;
 }
 
 .btn {
@@ -81,13 +81,6 @@ small {
   margin-bottom: 20px;
 }
 
-#comment-single-post {
-  color:var(--primary);
+.form-label {
+  margin-top: 20px;
 }
-
-.comments {
-  background-color: var(--dark);
-}
-
-
-

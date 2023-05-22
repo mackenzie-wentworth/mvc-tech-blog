@@ -3,30 +3,30 @@ const User = require('./User');
 const BlogPost = require('./BlogPost');
 const Comment = require('./Comment');
 
-// YES! BlogPost belongs to one User
+// BlogPost belongs to one User
 BlogPost.belongsTo(User, {
     foreignKey: 'user_id',
 })
 
-// YES! User can have many BlogPosts
+// User can have many BlogPosts
 User.hasMany(BlogPost, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
 })
 
-// YES! BlogPost can have many Comments
+// BlogPost can have many Comments
 // When we delete a BlogPost, make sure to delete the associated Comments
 BlogPost.hasMany(Comment, {
     foreignKey: 'blogPost_id',
     onDelete: 'CASCADE',
 })
 
-// MAYBE?? A Comment belongs to one User
+// A Comment belongs to one User
 Comment.belongsTo(User, {
     foreignKey: 'user_id',
 })
 
-// YES! A User can have many Comments
+// A User can have many Comments
 User.hasMany(Comment, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
