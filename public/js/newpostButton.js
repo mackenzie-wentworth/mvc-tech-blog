@@ -12,5 +12,5 @@ const newPostButtonHandler = async () => {
 };
 
 // TODO: Create "document" querySelector and addEventListener for newPostButtonHandlerButton
-document.querySelector('#select-create-post').addEventListener('click', newPostButtonHandler);
+document.querySelector('#select-create-post')?.addEventListener('click', newPostButtonHandler);
 
