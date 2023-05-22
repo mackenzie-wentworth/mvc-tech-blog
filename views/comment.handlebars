@@ -10,7 +10,7 @@
   </a>
 </div>
 {{!-- Single Blog Post --}}
-<div class="card mx-auto w-75 p-3">
+<div class="card mx-auto w-75 p-2">
   <div class="card-header">
     <h4 class="p-0 m-0" id="comment-single-post">{{title}}</h4>
     <small class="d-inline-block mt-n4">
@@ -24,13 +24,13 @@
   {{!-- Create new Comment form --}}
   {{#if logged_in}}
   <form id="add-comment-form">
-    <div class="form-group text-center mt-5">
+    <div class="form-group text-center mt-3">
       <input type="hidden" value="{{blogPost.id}}" />
-      <textarea class="form-input mx-auto w-75 pl-2 pt-2" id="add-comment" placeholder="Type comment here..."
+      <textarea class="form-input mx-auto w-100 pl-2 pt-2" id="add-comment" placeholder="Type comment here..."
         rows="4"></textarea>
     </div>
 
-    <div class="text-center mt-n5">
+    <div class="text-center mt-n4 mb-n3">
       <button type="submit" class="btn btn-primary ">Submit Comment</button>
     </div>
   </form>
