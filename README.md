@@ -6,13 +6,13 @@
 
 * Heroku Deployed Application: https://the-tech-blog.herokuapp.com/
 
----
+
 
 ## Description
 
 For this week's Challenge, I was tasked to build a CMS-style blog site from scratch using the Model-View-Controller (MVC) paradigm. **The Tech Blog** is a web application community for software developers to publish blog posts and leave comments for their peers.
 
----
+
 
 ## Table of Contents
 
@@ -24,7 +24,7 @@ For this week's Challenge, I was tasked to build a CMS-style blog site from scra
 - [License](#license)
 - [Badges](#badges)
 
----
+
 
 ## User Story
 
@@ -72,7 +72,7 @@ WHEN I am idle on the site for more than a set time
 THEN I am able to view posts and comments but I am prompted to log in again before I can add, update, or delete posts
 ```
 
----
+
 
 ## Usage
 
