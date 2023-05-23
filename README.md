@@ -78,7 +78,7 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
 
 The **The Tech Blog** serves as a place for software developers to read, write, and comment about field-related topics such as technical concepts, recent advancements, and new technologies. 
 
-### *How to Use the The Tech Blog:*
+### *How to Use The Tech Blog:*
 
 The following images demonstrate the appearance and functionality of The Tech Blog web application:
 
