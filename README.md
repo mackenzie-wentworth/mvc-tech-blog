@@ -86,8 +86,7 @@ The following images demonstrate the appearance and functionality of The Tech Bl
 
 ![An image of the homepage for the Express Note Taker application.](./assets/images/tech-blog-dashboard.png)
 
->For a full walkthrough of the The Tech Blog, please view the demo video below.
-[Watch demo video here!](https://github.com/mackenzie-wentworth/mvc-tech-blog/assets/122484637/3a0c7071-d908-4b6d-861b-42688f6fbd44)
+>For a full walkthrough of the The Tech Blog, please [watch demo video here!](https://github.com/mackenzie-wentworth/mvc-tech-blog/assets/122484637/3a0c7071-d908-4b6d-861b-42688f6fbd44)
 
 ---
 
