@@ -20,7 +20,6 @@ For this week's Challenge, I was tasked to build a CMS-style blog site from scra
 - [Acceptance Criteria](#acceptance-criteria)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
-- [Credits](#credits)
 - [License](#license)
 - [Badges](#badges)
 
@@ -72,8 +71,6 @@ WHEN I am idle on the site for more than a set time
 THEN I am able to view posts and comments but I am prompted to log in again before I can add, update, or delete posts
 ```
 
-
-
 ## Usage
 
 The **The Tech Blog** serves as a place for software developers to read, write, and comment about field-related topics such as technical concepts, recent advancements, and new technologies. 
@@ -118,7 +115,6 @@ If you have any questions, please see my contact information below to reach me f
 ## License
 
 This project is covered under the [MIT License](./LICENSE). For more details, please click the license icon below under 'Badges'.
-
 
 
 ## Badges
