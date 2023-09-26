@@ -1,5 +1,6 @@
 # MVC Tech Blog
 
+
 ## Application Links
 
 * GitHub Repository for Application: https://github.com/mackenzie-wentworth/mvc-tech-blog
@@ -7,11 +8,9 @@
 * Heroku Deployed Application: https://the-tech-blog.herokuapp.com/
 
 
-
 ## Description
 
 For this week's Challenge, I was tasked to build a CMS-style blog site from scratch using the Model-View-Controller (MVC) paradigm. **The Tech Blog** is a web application community for software developers to publish blog posts and leave comments for their peers.
-
 
 
 ## Table of Contents
@@ -24,7 +23,6 @@ For this week's Challenge, I was tasked to build a CMS-style blog site from scra
 - [Badges](#badges)
 
 
-
 ## User Story
 
 ```md
@@ -32,6 +30,7 @@ AS A developer who writes about tech
 I WANT a CMS-style blog site
 SO THAT I can publish articles, blog posts, and my thoughts and opinions
 ```
+
 
 ## Acceptance Criteria
 
@@ -70,6 +69,7 @@ THEN I am signed out of the site
 WHEN I am idle on the site for more than a set time
 THEN I am able to view posts and comments but I am prompted to log in again before I can add, update, or delete posts
 ```
+
 
 ## Usage
 
@@ -111,6 +111,7 @@ The following images demonstrate the appearance and functionality of The Tech Bl
 If you have any questions, please see my contact information below to reach me for inquiries:
 * **GitHub**: mackenzie-wentworth, at https://github.com/mackenzie-wentworth
 * **Email**: mwentworth28@gmail.com
+
 
 ## License
 
